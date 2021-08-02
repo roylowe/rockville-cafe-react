@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 import { Navbar, NavbarBrand } from 'reactstrap';
-import Specials from './components/MonthlySpecials';
+import MonthlySpecials from './components/MonthlySpecialsComponent';
+import { SPECIALS } from './shared/specials';
 import './App.css';
 
 class App extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {specials: SPECIALS};
+    }
+
     render() {
         return (
             <div className="App">
@@ -12,7 +18,7 @@ class App extends Component {
                     <NavbarBrand href="/">Rockville Cafe</NavbarBrand>
                 </div>
                 </Navbar>
-                <Specials />
+                <MonthlySpecials specials={this.state.specials}/>
             </div>
         );
     }
