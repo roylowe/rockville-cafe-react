@@ -33,8 +33,8 @@ class Main extends Component {
             <div>
                 <Header />
                 <Switch>
-                    <Route path='Home' component={HomePage} />
-                    <Route exact path='MonthlySpecials' render={() => <MonthlySpecials />} />
+                    <Route path='/Home' component={HomePage} />
+                    <Route exact path='/MonthlySpecials' render={() => <MonthlySpecials />} />
                     <Redirect to='Home' />
                 </Switch>
                 <Footer />

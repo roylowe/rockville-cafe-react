@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle} from 'reactstrap';
-//import SpecialsInfo from './SpecialsInfoComponent';
+import SpecialsInfo from './SpecialsInfoComponent';
 
 //this class will hold each monthly special
 class MonthlySpecials extends Component {
@@ -46,7 +46,7 @@ class MonthlySpecials extends Component {
                 {/* remove the below row when creating a card in it's own info component */}
                 <div className="row">
                     <div className="col-md-3 m-1">
-                        {this.renderSelectSpecial(this.state.selectedSpecial)}
+                        {this.renderSelectSpecial(this.props.selectedSpecial)}
                     </div>
                 </div>
             </div>
