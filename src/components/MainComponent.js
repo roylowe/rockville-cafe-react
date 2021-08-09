@@ -1,32 +1,43 @@
 import React, { Component } from 'react';
 import { Navbar, NavbarBrand } from 'reactstrap';
-import Directory from './DirectoryComponent';
-import MonthlySpecials from './components/MonthlySpecialsComponent';
+import MonthlySpecials from '../components/MonthlySpecialsComponent';
+import Header from './HeaderComponent';
+import Footer from './FooterComponent';
+import Home from './HomeComponent';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import { SPECIALS } from '../shared/specials';
+
 
 class Main extends Component {
     constructor(props) {
         super(props);
         this.state = {
             specials: SPECIALS,
-            selectedSpecial: null
+            
+            
         };
     }
 
-    onCampsiteSelect(campsiteId) {
-        this.setState({selectedCampsite: campsiteId});
-    }
-
+    
     render() {
+        const HomePage = () => {
+            return (
+                <Home />
+            );
+        }
+
+
+
+
         return (
             <div>
-                <Navbar dark color="primary">
-                    <div className="container">
-                        <NavbarBrand href="/">NuCamp</NavbarBrand>
-                    </div>
-                </Navbar>
-                <Directory campsites={this.state.campsites} onClick={campsiteId => this.onCampsiteSelect(campsiteId)}/>
-                <CampsiteInfo campsite={this.state.campsites.filter(campsite => campsite.id === this.state.selectedCampsite)[0]} />
+                <Header />
+                <Switch>
+                    <Route path='Home' component={HomePage} />
+                    <Route exact path='MonthlySpecials' render={() => <MonthlySpecials />} />
+                    <Redirect to='Home' />
+                </Switch>
+                <Footer />
             </div>
         );
     };

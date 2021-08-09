@@ -15,7 +15,7 @@ export const SPECIALS = [
     },
     {
         id: 2,
-        name: 'dinner',
+        name: 'Dinner',
         image: 'assets/images/ribDinner.jpeg',
         description: "prime rib with fries, tomatoes and pickles",
         cost: "$19.99"

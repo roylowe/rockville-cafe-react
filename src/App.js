@@ -1,25 +1,17 @@
 import React, { Component } from 'react';
-import { Navbar, NavbarBrand } from 'reactstrap';
-import MonthlySpecials from './components/MonthlySpecialsComponent';
-import { SPECIALS } from './shared/specials';
+import Main from './components/MainComponent';
 import './App.css';
+import { BrowserRouter } from 'react-router-dom';
 
 class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {specials: SPECIALS};
-    }
-
+    
     render() {
         return (
-            <div className="App">
-                <Navbar dark color="primary">
-                <div className="container">
-                    <NavbarBrand href="/">Rockville Cafe</NavbarBrand>
+            <BrowserRouter>
+                <div className="App">
+                <Main />
                 </div>
-                </Navbar>
-                <MonthlySpecials specials={this.state.specials}/>
-            </div>
+            </BrowserRouter>
         );
     }
 }

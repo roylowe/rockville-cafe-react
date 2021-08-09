@@ -4,19 +4,6 @@ import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle} from 'rea
 
 //this class will hold each monthly special
 class MonthlySpecials extends Component {
-    constructor (props) {
-        super(props);
-        this.state = {
-            selectedSpecial: null  //this is a user defined variable
-            
-        };
-    }
-
-    //A method to hold the state when a monthly special is selected
-    onSpecialSelect(monthlySpecial){
-        this.setState({selectedSpecial: monthlySpecial});
-    }
-
     //A method to render a selected monthly special
     renderSelectSpecial(monthlySpecial){
         if (monthlySpecial) {

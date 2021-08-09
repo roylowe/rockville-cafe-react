@@ -10,7 +10,7 @@ class Header extends Component {
                         <div className="row">
                             <div className="col">
                                 <h1>Rockville Cafe</h1>
-                                <h2>Come in, sit down, relax</h2>
+                                <h3>Come in, sit down, relax</h3>
                             </div>
                         </div>
                     </div>
