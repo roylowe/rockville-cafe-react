@@ -22,7 +22,7 @@ class MonthlySpecials extends Component {
 
     render() {
         //how does the below code access the specials array in specials.js
-        const special = this.props.specials.map(monthlySpecial => {
+        const special = this.props.selectedSpecial.map((monthlySpecial) => {
             return (
                 <div key={monthlySpecial.id}className="col-md-3 m-1">
                     <Card onClick={() => this.onSpecialSelect(monthlySpecial)}>
@@ -32,8 +32,8 @@ class MonthlySpecials extends Component {
                         </CardImgOverlay>
                     </Card>
                 </div>
-            )
-        } );
+            );
+        });
 
 
 

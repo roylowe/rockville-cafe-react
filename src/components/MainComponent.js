@@ -34,7 +34,7 @@ class Main extends Component {
                 <Header />
                 <Switch>
                     <Route path='/Home' component={HomePage} />
-                    <Route exact path='/MonthlySpecials' render={() => <MonthlySpecials />} />
+                    <Route exact path='/MonthlySpecials' render={() => <MonthlySpecials selectedSpecial={this.state.specials} />}/>
                     <Redirect to='Home' />
                 </Switch>
                 <Footer />
